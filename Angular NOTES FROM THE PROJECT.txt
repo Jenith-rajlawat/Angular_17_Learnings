@@ -1,0 +1,133 @@
+	TO INSTALL ANGULAR
+	• npm install -g @angular/cli  // ahile ko version 17
+	• ALSO INSTALL NODE js in your system.
+	
+	To Create a new PROJECT
+	• ng new product-management
+	• Select scss no server side rendering
+
+Added everything to git
+
+	To run the project(NOTE cd into the workspace first, in our case "cd product-management")
+	• ng serve -o 
+
+
+
+
+INSTALL ANGULAR MATERIAL
+	• Ng add  @angular/material
+	• Choose any theme and say yes to all
+	• Now if you want to use any module of material , you must give the import of that module in the ts of the respective component where we want to use it and also add it to the meta data of imports and you can use it in the html file after that.
+
+Install  tailwind css
+	
+	
+	1. Install Tailwind CSS
+Install tailwindcss via npm, and then run the init command to generate a tailwind.config.js file.
+Terminal
+npm install -D tailwindcss postcss autoprefixernpx tailwindcss init
+	2. Configure your template paths
+Add the paths to all of your template files in your tailwind.config.js file.
+tailwind.config.js
+/** @type {import('tailwindcss').Config} */module.exports = {  content: [    "./src/**/*.{html,ts}",  ],  theme: {    extend: {},  },  plugins: [],}
+	3. Add the Tailwind directives to your CSS
+Add the @tailwind directives for each of Tailwind’s layers to your ./src/styles.css file.
+styles.css
+@tailwind base;@tailwind components;@tailwind utilities;
+	4. Start your build process
+Run your build process with ng serve.
+Terminal
+ng serve
+	5. Start using Tailwind in your project
+Start using Tailwind’s utility classes to style your content.
+app.component.html
+<h1class="text-3xl font-bold underline">Hello world!
+</h1>
+	
+	From <https://tailwindcss.com/docs/guides/angular> 
+	
+	
+	Tracks the file given , css is generated only of those file which you used
+	From <https://tailwindcss.com/docs/guides/angular> 
+	
+	
+	
+	
+	From <https://tailwindcss.com/docs/guides/angular> 
+	
+	
+
+
+
+
+
+
+COMPONENT
+	• Fundamental building block. FULL APPLICATION is made using components
+	• Html+ css+ ts file
+	• templateUrl: refers to html
+	• styleUrl: refers to css 
+	• Selector: used to use one comp on another
+
+
+PROPERTIES AND INTERPOLATION
+	• Properties defined in the ts class and used in HTML using {{identifier}}
+	• INTERPOLATION -{{}} ;double curly braces
+
+
+GENERATE COMPONENT
+	• Ng g c components/home   // creates components folder within app and within that creates home comp
+
+HOW TO USE COMPONENT WITHIN ANOTHER COMPONENT
+	• Use that component selector in the another component where you want to show .
+	• SO ANGULAR COMPONENT MA KEI USE GARNU PARYO BHANE JAHILE PANI TESLAI IMPORT GARNU PARXA
+	• IN our case ja use garne ho teskai component ko ts file ma import statement and import arrays ma rakhdine 
+
+SINGLE FILE COMPONENT
+	• Simply delete the html and scss file 
+	• Change templateUrl in ts file to template: ``  //backtick
+	• Do the same for styleUrl --> styles: ``
+	• Now you can write your html and css within that backtick itself creating a single file component
+
+
+
+
+CONTROL FLOW
+	• @if
+	• @else
+
+
+<p>Type is {{type}}, therefore show</p>
+@if(type==1){
+<h2>Hello type {{type}}, you are the leader</h2>}
+@else{
+<h2>Hello type {{type}}, you are the support</h2>}
+
+	• @switch
+
+@switch(type){
+	@case(num){
+	}
+	@default{
+	}
+}
+
+	• @for
+
+types = [1,2,3,4,5]
+Foreach jasto kaam garxa
+@for(item of types; track $index){
+<h2>Hello {{item}}</h2>
+}
+
+If no element is there in the array then , use @empty after for to say there is no element, it makes the code robust
+
+
+
+
+NOTES 
+	1) Everything starts from index.html file which is using the selector <app-root></app-root> to display the app components html and css and ts .
+	2) Styles.scss file is a global scss file
+	3) Main.ts is the angular execution starts. The app.component the root component is started in the main.ts file using bootstrapApplication 
+	4) Component is a collection of html , css, test file and ts file 
+	5) Angular.json, package.json for dependency and configuration management.
